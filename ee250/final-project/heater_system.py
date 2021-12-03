@@ -2,7 +2,8 @@ from grovepi import *
 from grove_rgb_lcd import *
 from time import sleep
 from math import isnan
-
+import asyncio
+from kasa import SmartPlug
 dht_sensor_port = 7 
 setRGB(0,128,0)
 
