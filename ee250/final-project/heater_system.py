@@ -18,15 +18,15 @@ while True:
 		if isnan(temp) is True or isnan(hum) is True:
 			raise TypeError('nan error')
 
-        if 21 < 23:
+        if temp < 23 :
             await p.update()
             print(p.alias + "Is waking up")
             await p.turn_on()
-        if temp == 23:
+        if temp == 23 :
             await p.update()
             print(p.alias + "Is going to sleep")
             await p.turn_off()
-
+            
 		t = str(temp)
 		h = str(hum)
 
