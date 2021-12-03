@@ -20,7 +20,7 @@ while True:
 
 		t = str(temp)
 		h = str(hum)
-
+        print("fuck")
         # instead of inserting a bunch of whitespace, we can just insert a \n
         # we're ensuring that if we get some strange strings on one line, the 2nd one won't be affected
 		setText_norefresh("Temp:" + t + "C\n" + "Humidity :" + h + "%")
