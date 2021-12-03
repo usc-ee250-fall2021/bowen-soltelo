@@ -13,14 +13,11 @@ while True:
 		[ temp,hum ] = dht(dht_sensor_port,0)
 		print("temp =", temp, "C\thumidity =", hum,"%")
 
-		# check if we have nans
-		# if so, then raise a type error exception
 		if isnan(temp) is True or isnan(hum) is True:
 			raise TypeError('nan error')
 
 		t = str(temp)
 		h = str(hum)
-        print("fuck")
         # instead of inserting a bunch of whitespace, we can just insert a \n
         # we're ensuring that if we get some strange strings on one line, the 2nd one won't be affected
 		setText_norefresh("Temp:" + t + "C\n" + "Humidity :" + h + "%")
