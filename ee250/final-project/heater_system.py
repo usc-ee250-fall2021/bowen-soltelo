@@ -17,8 +17,7 @@ while True:
 		# if so, then raise a type error exception
 		if isnan(temp) is True or isnan(hum) is True:
 		    raise TypeError('nan error')
-        if True:
-            print("fuck")
+        print("fuck")
 		t = str(temp)
 		h = str(hum)
 
