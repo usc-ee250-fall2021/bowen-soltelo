@@ -9,7 +9,7 @@ setRGB(0,128,0)
 while True:
 	try:
         # get the temperature and Humidity from the DHT sensor
-		[ temp,hum ] = dht(dht_sensor_port,dht_sensor_type)
+		[ temp,hum ] = dht(dht_sensor_port,0)
 		print("temp =", temp, "C\thumidity =", hum,"%")
 
 		# check if we have nans
