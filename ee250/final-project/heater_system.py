@@ -15,7 +15,16 @@ p = SmartPlug("192.168.1.169")
   #  if temp < 23 and p.is_off:
    #     print(p.alias + "Is waking up")
    #     await p.turn_on()
-
+async def on():
+    await p.update()
+    if p.is_off:
+        print(p.alias + "Is waking up")
+        await p.turn_on()
+async def off():
+    await p.update()
+    if p.is_on:
+        print(p.alias + "Is going to sleep")
+        await p.turn_off()
 while True:
     try:
         [ temp,hum ] = dht(dht_sensor_port,0)
@@ -23,10 +32,12 @@ while True:
 
         if isnan(temp) is True or isnan(hum) is True:
             raise TypeError('nan error')
-        asyncio.run(p.update())
 
-        p.alias
         #asyncio.run(main(temp))
+        if temp < 23:
+            asyncio.run(on())
+        if temp == 23:
+            asyncio.run(off())
         t = str(temp)
         h = str(hum)
 
