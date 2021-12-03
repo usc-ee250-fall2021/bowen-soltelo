@@ -8,7 +8,7 @@ while True:
         [temp,hum] = dht(dht_sensor_port,0)
 
 
-        print "temp =" , temp, "C\thumadity =" hum,"%"
+        print ("temp =" , temp, "C\thumadity =" hum,"%")
         t = str(temp)
         h = str(hum)
 
