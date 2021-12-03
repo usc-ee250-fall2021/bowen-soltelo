@@ -23,9 +23,9 @@ while True:
         if isnan(temp) is True or isnan(hum) is True:
             raise TypeError('nan error')
 
-        if temp < 23:
+        if temp < 23 and p.is_off:
             asyncio.run(on())
-        if temp == 23:
+        if temp == 23 and p.is_on:
             asyncio.run(off())
         t = str(temp)
         h = str(hum)
