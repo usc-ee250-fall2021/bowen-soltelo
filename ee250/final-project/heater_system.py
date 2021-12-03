@@ -16,13 +16,13 @@ while True:
             raise TypeError('nan error')
 
         if temp < 23:
-            p.update()
+            asyncio.run(p.update())
             print(p.alias + "Is waking up")
-            p.turn_on()
+            asyncio.run(p.turn_on())
         if temp == 23:
-            p.update()
+            asyncio.run(p.update())
             print(p.alias + "Is going to sleep")
-            p.turn_off()
+            asyncio.run(p.turn_off())
         t = str(temp)
         h = str(hum)
 
