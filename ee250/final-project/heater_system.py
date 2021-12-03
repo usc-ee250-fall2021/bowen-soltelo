@@ -7,14 +7,14 @@ from kasa import SmartPlug
 dht_sensor_port = 7 
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
-def main(temp):
-    await p.update()
-    if temp == 23 and p.is_on:
-        print(p.alias + "Is going to sleep")
-        await p.turn_off()
-    if temp < 23 and p.is_off:
-        print(p.alias + "Is waking up")
-        await p.turn_on()
+#async def main(temp):
+ #   await p.update()
+ #   if temp == 23 and p.is_on:
+  #      print(p.alias + "Is going to sleep")
+  #      await p.turn_off()
+  #  if temp < 23 and p.is_off:
+   #     print(p.alias + "Is waking up")
+   #     await p.turn_on()
 
 while True:
     try:
@@ -23,8 +23,10 @@ while True:
 
         if isnan(temp) is True or isnan(hum) is True:
             raise TypeError('nan error')
+        asyncio.run(p.update())
 
-        asyncio.run(main(temp))
+        p.alias
+        #asyncio.run(main(temp))
         t = str(temp)
         h = str(hum)
 
