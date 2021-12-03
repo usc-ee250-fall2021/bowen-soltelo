@@ -1,24 +1,23 @@
-import asyncio
-from kasa import SmartPlug
 from grovepi import *
 from grove_rgb_lcd import *
 from time import sleep
 from math import isnan
-dht_sensor_port = 7
+
+dht_sensor_port = 7 
 setRGB(0,128,0)
-p = SmartPlug("192.168.1.169")
+
 while True:
 	try:
         # get the temperature and Humidity from the DHT sensor
-		[ temp,hum ] = dht(dht_sensor_port,0)
+		[ temp,hum ] = dht(dht_sensor_port,dht_sensor_type)
 		print("temp =", temp, "C\thumidity =", hum,"%")
 
 		# check if we have nans
 		# if so, then raise a type error exception
 		if isnan(temp) is True or isnan(hum) is True:
-		    raise TypeError('nan error')
+			raise TypeError('nan error')
 
-	    t = str(temp)
+		t = str(temp)
 		h = str(hum)
 
         # instead of inserting a bunch of whitespace, we can just insert a \n
