@@ -6,7 +6,7 @@ import asyncio
 from kasa import SmartPlug
 dht_sensor_port = 7 
 setRGB(0,128,0)
-
+p = SmartPlug("192.168.1.169")
 while True:
 	try:
         # get the temperature and Humidity from the DHT sensor
