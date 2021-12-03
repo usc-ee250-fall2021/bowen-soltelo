@@ -7,24 +7,6 @@ from kasa import SmartPlug
 dht_sensor_port = 7 
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
-#async def main(temp):
- #   await p.update()
- #   if temp == 23 and p.is_on:
-  #      print(p.alias + "Is going to sleep")
-  #      await p.turn_off()
-  #  if temp < 23 and p.is_off:
-   #     print(p.alias + "Is waking up")
-   #     await p.turn_on()
-#async def on():
-#    await p.update()
- #   if p.is_off:
- #       print(p.alias + "Is waking up")
- #       await p.turn_on()
-#async def off():
- #   await p.update()
- #   if p.is_on:
- #       print(p.alias + "Is going to sleep")
-  #      await p.turn_off()
 async def main():
     while True:
         try:
@@ -35,17 +17,12 @@ async def main():
                 raise TypeError('nan error')
 
             await p.update()
-            if temp == 23 and p.is_on:
-                print(p.alias + "Is going to sleep")
+            if temp == 24 and p.is_on:
+                print(p.alias + " Is going to sleep at " + await p.get_time())
                 await p.turn_off()
-            if temp < 23 and p.is_off:
-                print(p.alias + "Is waking up")
+            if temp < 24 and p.is_off:
+                print(p.alias + "Is waking up at " + await p.get_time())
                 await p.turn_on()
-            #asyncio.run(main(temp))
-            #if temp < 23:
-            #   asyncio.run(on())
-            #if temp == 23:
-            #   asyncio.run(off())
             t = str(temp)
             h = str(hum)
 
@@ -63,7 +40,7 @@ async def main():
             break
 
         # wait some time before re-updating the LCD
-        sleep(5)
+        sleep(60)
 
 if __name__ == "__main__":
     asyncio.run(main())
