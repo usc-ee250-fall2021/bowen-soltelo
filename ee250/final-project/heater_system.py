@@ -11,8 +11,8 @@ while True:
 	try:
         # get the temperature and Humidity from the DHT sensor
 		[ temp,hum ] = dht(dht_sensor_port,0)
-		print("temp =", temp, "C\thumidity =", hum,"%")
-
+        print("temp =", temp, "C\thumidity =", hum,"%")
+        print("temp =", temp, "C\thumidity =", hum,"%")
 		if isnan(temp) is True or isnan(hum) is True:
 			raise TypeError('nan error')
 
