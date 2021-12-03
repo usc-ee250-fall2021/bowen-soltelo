@@ -17,11 +17,12 @@ async def main():
                 raise TypeError('nan error')
 
             await p.update()
+            t = await p.get_time()
             if temp == 24 and p.is_on:
-                print(p.alias + " Is going to sleep at " + await p.get_time())
+                print(p.alias + " Is going to sleep at " + t)
                 await p.turn_off()
             if temp < 24 and p.is_off:
-                print(p.alias + "Is waking up at " + await p.get_time())
+                print(p.alias + "Is waking up at " + t)
                 await p.turn_on()
             t = str(temp)
             h = str(hum)
