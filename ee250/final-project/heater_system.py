@@ -7,7 +7,7 @@ from kasa import SmartPlug
 dht_sensor_port = 7 
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
-async def mian(temp):
+async def main(temp):
     await p.update()
     if temp == 23 and p.is_on:
         print(p.alias + "Is going to sleep")
