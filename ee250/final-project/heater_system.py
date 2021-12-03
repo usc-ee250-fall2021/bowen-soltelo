@@ -16,13 +16,13 @@ while True:
             raise TypeError('nan error')
 
         if temp < 23:
-            await p.update()
+            p.update()
             print(p.alias + "Is waking up")
-            await p.turn_on()
+            p.turn_on()
         if temp == 23:
-            await p.update()
+            p.update()
             print(p.alias + "Is going to sleep")
-            await p.turn_off()
+            p.turn_off()
         t = str(temp)
         h = str(hum)
 
