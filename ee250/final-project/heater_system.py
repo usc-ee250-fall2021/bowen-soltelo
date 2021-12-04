@@ -18,11 +18,11 @@ async def main():
 
             await p.update()
             time = await p.get_time()
-            if temp == 25 and p.is_on:
+            if temp == 24 and p.is_on:
                 print(p.alias + " Is going to sleep at ")
                 print(time)
                 await p.turn_off()
-            if temp < 25 and p.is_off:
+            if temp < 24 and p.is_off:
                 print(p.alias + "Is waking up at ")
                 print(time)
                 await p.turn_on()
