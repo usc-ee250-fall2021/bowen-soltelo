@@ -81,7 +81,7 @@ async def main():
 
                 await p.update()
                 time = await p.get_time()
-                if temp == goal and p.is_on:
+                if temp >= goal and p.is_on:
                     print(p.alias + " Is going to sleep at ")
                     print(time)
                     await p.turn_off()
