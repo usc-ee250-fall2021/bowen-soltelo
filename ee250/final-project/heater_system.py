@@ -82,20 +82,14 @@ async def main():
 
                 await p.update()
                 time = await p.get_time()
-                if outside_temp >= 21:
+                if (temp >= goal and p.is_on) or outside_temp >= 21:
                     print(p.alias + " Is going to sleep at ")
                     print(time)
                     await p.turn_off()
-                elif temp >= goal and p.is_on:
-                    print(p.alias + " Is going to sleep at ")
-                    print(time)
-                    await p.turn_off()
-                elif temp < goal and p.is_off :
+                if temp < goal and outside_temp < 21 and p.is_off :
                     print(p.alias + "Is waking up at ")
                     print(time)
                     await p.turn_on()
-                else:
-                    print("NOT POSSIBLE")
 
 
             count +=1
