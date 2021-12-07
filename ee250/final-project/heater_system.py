@@ -87,7 +87,7 @@ async def main():
                     print(time)
                     await p.turn_off()
                 if temp < goal and outside_temp < 21 and p.is_off :
-                    print(p.alias + "Is waking up at ")
+                    print(p.alias + " Is waking up at ")
                     print(time)
                     await p.turn_on()
 
