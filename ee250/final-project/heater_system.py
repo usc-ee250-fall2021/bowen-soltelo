@@ -91,7 +91,7 @@ async def main():
                     print(time)
                     await p.turn_on()
             count +=1
-            print(count)
+            #print(count)
             if (temp == goal):
                 setRGB(0,128,0)
             else:
