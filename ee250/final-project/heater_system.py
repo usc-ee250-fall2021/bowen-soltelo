@@ -16,7 +16,7 @@ def get_weather(zip_code):
         'appid': OWM_API_KEY,
         # TODO: referencing the API documentation, add the missing parameters for zip code and units (Fahrenheit)
         'zip' : DEFAULT_ZIP,
-        'units' : 'matric'
+        'units' : 'metric'
     }
 
     response = requests.get('http://api.openweathermap.org/data/2.5/weather', params)
@@ -42,7 +42,7 @@ def weather_init():
     return temp
 
 async def main():
-    count = 600
+    count = 300
     temp = 0
     hum =0
     outside_temp = 0
@@ -70,7 +70,7 @@ async def main():
                 goal = 25
             else :
                 goal = 26
-            if (count == 600):
+            if (count == 300):
                 count = 0
                 [ temp,hum ] = dht(dht_sensor_port,0)
                 print("temp =", temp, "C\thumidity =", hum,"%")
