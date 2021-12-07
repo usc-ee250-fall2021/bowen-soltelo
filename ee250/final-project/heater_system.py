@@ -11,7 +11,6 @@ dht_sensor_port = 8
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
 PORT_potentionmeter = 2
-temp_update = 0
 def get_weather(zip_code):
     params = {
         'appid': OWM_API_KEY,
@@ -44,6 +43,7 @@ def weather_init():
 
 async def main():
     count = 0
+    temp_update = 0
     while True:
         try:
             threshold = analogRead(PORT_potentionmeter)
