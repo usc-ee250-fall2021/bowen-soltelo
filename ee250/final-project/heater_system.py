@@ -95,6 +95,7 @@ async def main():
                     print(time)
                     await p.turn_on()
                 else:
+                    print("NOT POSSIBLE")
 
 
             count +=1
