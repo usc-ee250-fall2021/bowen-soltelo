@@ -45,7 +45,7 @@ def weather_init():
 async def main():
     while True:
         try:
-            threshold = grovepi.analogRead(PORT_potentionmeter)
+            threshold = analogRead(PORT_potentionmeter)
         
             if(threshold <= 100):
                 goal =  17
