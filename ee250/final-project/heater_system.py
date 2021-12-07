@@ -7,7 +7,7 @@ from kasa import SmartPlug
 import requests
 OWM_API_KEY = '692176ded3c5179295c7e03db3edfc00'  # OpenWeatherMap API Key
 DEFAULT_ZIP = 90089
-dht_sensor_port = 7 
+dht_sensor_port = 8 
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
 PORT_potentionmeter = 2
