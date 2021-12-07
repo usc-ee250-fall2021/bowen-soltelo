@@ -99,7 +99,7 @@ async def main():
             g = str(goal)
                 # instead of inserting a bunch of whitespace, we can just insert a \n
                 # we're ensuring that if we get some strange strings on one line, the 2nd one won't be affected
-            setText_norefresh("Temp:" + t + " C Set:" + g + " C\n" + "Humidity :" + h + "%")
+            setText_norefresh("Temp:" + t + "CSet:" + g + " C\n" + "Humidity :" + h + "%")
 
         except (IOError, TypeError) as e:
             print(str(e))
