@@ -12,6 +12,7 @@ setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
 PORT_potentionmeter = 2
 temp_update = 0
+count = 0
 def get_weather(zip_code):
     params = {
         'appid': OWM_API_KEY,
