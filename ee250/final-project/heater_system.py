@@ -43,7 +43,8 @@ def weather_init():
 
 async def main():
     count = 600
-    temp,hum =0
+    temp = 0
+    hum =0
     outside_temp = 0
     while True:
         try:
