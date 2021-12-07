@@ -42,8 +42,9 @@ def weather_init():
     return temp
 
 async def main():
-    count = 0
-    temp_update = 0
+    count = 600
+    temp,hum =0
+    outside_temp = 0
     while True:
         try:
             threshold = analogRead(PORT_potentionmeter)
@@ -68,9 +69,6 @@ async def main():
                 goal = 25
             else :
                 goal = 26
-            count +=1
-            temp,hum
-            outside_temp
             if (count == 600):
                 count = 0
                 [ temp,hum ] = dht(dht_sensor_port,0)
@@ -90,7 +88,7 @@ async def main():
                     print(p.alias + "Is waking up at ")
                     print(time)
                     await p.turn_on()
-
+            count +=1
             if (temp == goal):
                 setRGB(0,128,0)
             else:
