@@ -6,7 +6,7 @@ import asyncio
 from kasa import SmartPlug
 import requests
 OWM_API_KEY = '692176ded3c5179295c7e03db3edfc00'  # OpenWeatherMap API Key
-DEFAULT_ZIP = 90089
+DEFAULT_ZIP = 90007
 dht_sensor_port = 8 
 setRGB(0,128,0)
 p = SmartPlug("192.168.1.169")
@@ -36,8 +36,8 @@ def weather_init():
     zip_code = DEFAULT_ZIP
     temp, hum = get_weather(zip_code)
     
-    output = '{:.1f}F, {:>.0f}% humidity'.format(temp, hum)
-    print('weather for {}: {}'.format(zip_code, output))
+    output = '{:.1f}C, {:>.0f}% humidity'.format(temp, hum)
+    print('Outside Weather for {}: {}'.format(zip_code, output))
 
     return temp
 
